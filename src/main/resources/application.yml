@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+kafka:
+  groupId: myGroup
+  concurrencyCount: 3
+  address: localhost:9092
+
+redis:
+  host: ${REDIS_HOST:localhost}
+  port: ${REDIS_PORT:6379}
+
+cache-minute:
+  event-cache-hour: 1
