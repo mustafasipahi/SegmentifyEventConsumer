@@ -1,8 +1,33 @@
 version: '3.3'
 services:
 
-  buy-easily-app-redis:
-    container_name: buy-easily-app-redis
+  segmentify_producer_app:
+    container_name: segmentify_producer_app
+    image: segmentify_producer_app:1
+    restart: always
+    build: ./segmentify-producer/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - kafka
+
+  segmentify_consumer_app:
+    container_name: segmentify_producer_app
+    image: segmentify_consumer_app:1
+    restart: always
+    build: ./segmentify-consumer/
+    ports:
+      - "8081:8081"
+    environment:
+      REDIS_HOST: segmentify_redis
+      REDIS_PORT: 6379
+    depends_on:
+      - redis
+      - kafka
+
+  redis:
+    container_name: segmentify_redis
     image: redis:6.2-alpine
     restart: always
     ports:
@@ -16,8 +41,6 @@ services:
 
   kafka:
     image: confluentinc/cp-kafka:latest
-    depends_on:
-      - zookeeper
     ports:
       - "9092:9092"
     environment:
@@ -27,6 +50,8 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - zookeeper
 
 volumes:
   database_data:
