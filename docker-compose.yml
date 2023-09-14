@@ -13,7 +13,7 @@ services:
       - kafka
 
   segmentify_consumer_app:
-    container_name: segmentify_producer_app
+    container_name: segmentify_consumer_app
     image: segmentify_consumer_app:1
     restart: always
     build: ./segmentify-consumer/
