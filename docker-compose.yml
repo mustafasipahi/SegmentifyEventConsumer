@@ -57,12 +57,10 @@ volumes:
   database_data:
     driver: local
 
-# docker build -t user-leave-tracking-app -f Dockerfile .
 # docker ps
 # docker images -a
 # docker network ls
-# docker run --name user-leave-tracking-app -p 8080:8080 user-leave-tracking-app
-# docker image rm user-leave-tracking-app
+# docker image rm
 # docker rmi $(docker images -a -q)
 
 # docker-compose up -d
