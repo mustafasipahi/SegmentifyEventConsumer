@@ -1,18 +1,12 @@
 
 v
 Fsrc/main/java/segmentify/configuration/properties/KafkaProperties.java,1/e/1e119b7526fb4e1f59427009ae95afd2e1ea1420
-b
-2src/main/java/segmentify/request/EventRequest.java,1/a/1a0c99162282b2cbb9095c6ce003e23482e3df82
 t
 Dsrc/main/java/segmentify/configuration/async/AsyncConfiguration.java,8/e/8eb8db30e11e3a7d515a27a6e087cbae8d0f5ce5
 w
 Gsrc/main/java/segmentify/configuration/async/AsyncExceptionHandler.java,f/b/fba44d14157d42882db6744a3f065d43490966a2
 {
 Ksrc/main/java/segmentify/configuration/properties/EventRedisProperties.java,6/7/67ce80ff4d28d25304472f3a5cb09d9bce4f3934
-t
-Dsrc/main/java/segmentify/configuration/redis/RedisConfiguration.java,2/9/293c25d78b860edc8ca3df5940435ce97013f24f
-j
-:src/main/java/segmentify/constants/RedisCacheConstant.java,a/e/aea2a4a4694c908b8cabe4fbe1ad42a811e57e95
 v
 Fsrc/main/java/segmentify/configuration/properties/RedisProperties.java,f/b/fb137ed0217debbd3c2347971f49351a95ef8b32
 e
@@ -24,11 +18,9 @@ F
 kafka_server_jaas.conf,c/e/ce748279a6717b3661e8dcd92ce1c3a7793159ac
 Y
 )src/main/java/segmentify/Application.java,d/1/d1aaf171908ddd866b879eeab20945c7622653bb
-d
-4src/main/java/segmentify/consumer/EventProducer.java,4/e/4ea5c48723c29518a3ee5195267d8909feb25442
 Z
 *src/main/java/segmentify/dto/EventDto.java,3/e/3e5a37b8cde77321a4eff6b33bf7ee5902acb098
-b
-2src/main/java/segmentify/service/EventService.java,5/2/522735c912657b60d7347e816222f54123365b2f
-b
-2src/main/java/segmentify/service/RedisService.java,1/5/15bfcccae1aa5f4c55cacc725f60856b2454b464
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+|
+Lsrc/main/java/segmentify/configuration/kafka/KafkaConsumerConfiguration.java,2/e/2e430489e45ce77c7cbb743804286c905b85d979

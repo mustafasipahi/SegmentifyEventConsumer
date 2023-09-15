@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-import static segmentify.constants.RedisCacheConstant.EVENT_CACHE_PREFIX;
+import static segmentify.constants.RedisCacheConstant.*;
 
 @Configuration
 @EnableCaching
@@ -55,11 +55,16 @@ public class RedisConfiguration {
     private Map<String, RedisCacheConfiguration> constructInitialCacheConfigurations() {
         final Map<String, RedisCacheConfiguration> redisCacheConfigurationMap = new HashMap<>();
 
-        final RedisCacheConfiguration eventCache = RedisCacheConfiguration.defaultCacheConfig()
+        final RedisCacheConfiguration productViewEventCache = RedisCacheConfiguration.defaultCacheConfig()
             .entryTtl(Duration.ofMinutes(eventRedisProperties.getEventCacheHour()))
             .disableCachingNullValues();
 
-        redisCacheConfigurationMap.put(EVENT_CACHE_PREFIX, eventCache);
+        final RedisCacheConfiguration pageViewEventCache = RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofMinutes(eventRedisProperties.getEventCacheHour()))
+                .disableCachingNullValues();
+
+        redisCacheConfigurationMap.put(PRODUCT_VIEW_EVENT_CACHE_PREFIX, productViewEventCache);
+        redisCacheConfigurationMap.put(PAGE_VIEW_EVENT_CACHE_PREFIX, pageViewEventCache);
 
         return redisCacheConfigurationMap;
     }

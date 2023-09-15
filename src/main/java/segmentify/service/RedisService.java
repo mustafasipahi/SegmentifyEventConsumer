@@ -5,11 +5,12 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import segmentify.configuration.properties.EventRedisProperties;
-import segmentify.request.EventRequest;
+import segmentify.request.PageViewEventRequest;
+import segmentify.request.ProductViewEventRequest;
 
 import java.util.concurrent.TimeUnit;
 
-import static segmentify.constants.RedisCacheConstant.EVENT_CACHE_PREFIX;
+import static segmentify.constants.RedisCacheConstant.*;
 
 @Service
 @AllArgsConstructor
@@ -19,10 +20,20 @@ public class RedisService {
     private final RedisTemplate<String, Object> redisTemplate;
 
     @Async
-    public void save(EventRequest eventRequest) {
+    public void saveProductViewEvent(ProductViewEventRequest request) {
         redisTemplate.opsForValue().set(
-                EVENT_CACHE_PREFIX + eventRequest.getApiKey(),
-                eventRequest.getEventList(),
+                PRODUCT_VIEW_EVENT_CACHE_PREFIX + request.getApiKey(),
+                request.getProductViewEvent(),
+                eventRedisProperties.getEventCacheHour(),
+                TimeUnit.HOURS
+        );
+    }
+
+    @Async
+    public void savePageViewEvent(PageViewEventRequest request) {
+        redisTemplate.opsForValue().set(
+                PAGE_VIEW_EVENT_CACHE_PREFIX + request.getApiKey(),
+                request.getPageViewEvent(),
                 eventRedisProperties.getEventCacheHour(),
                 TimeUnit.HOURS
         );
