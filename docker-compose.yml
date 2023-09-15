@@ -6,6 +6,8 @@ services:
     image: segmentify_producer_app:1
     restart: always
     build: ./segmentify-producer/
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
     ports:
       - "8080:8080"
     depends_on:
@@ -17,11 +19,12 @@ services:
     image: segmentify_consumer_app:1
     restart: always
     build: ./segmentify-consumer/
-    ports:
-      - "8081:8081"
     environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       REDIS_HOST: segmentify_redis
       REDIS_PORT: 6379
+    ports:
+      - "8081:8081"
     depends_on:
       - redis
       - kafka
@@ -35,9 +38,12 @@ services:
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
+    ports:
+      - '2181:2181'
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+      ALLOW_ANONYMOUS_LOGIN: yes
 
   kafka:
     image: confluentinc/cp-kafka:latest

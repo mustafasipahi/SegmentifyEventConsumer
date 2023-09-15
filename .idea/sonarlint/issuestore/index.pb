@@ -17,8 +17,6 @@ v
 Fsrc/main/java/segmentify/configuration/properties/RedisProperties.java,f/b/fb137ed0217debbd3c2347971f49351a95ef8b32
 e
 5src/main/java/segmentify/constants/EventNameType.java,9/9/99cff85936eb31bfe3cd9b4487ef79339c49e1c9
-|
-Lsrc/main/java/segmentify/configuration/kafka/KafkaConsumerConfiguration.java,2/e/2e430489e45ce77c7cbb743804286c905b85d979
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
