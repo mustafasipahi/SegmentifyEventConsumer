@@ -11,7 +11,7 @@ import segmentify.service.EventService;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class EventProducer {
+public class EventConsumer {
 
     private final EventService eventService;
 
