@@ -1,13 +1,15 @@
 package segmentify.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
 @ToString
-public class PageViewEvent extends Event {
+@AllArgsConstructor
+@NoArgsConstructor
+public class PageViewEvent extends Event implements Serializable {
 
     private String category;
     private String subCategory;

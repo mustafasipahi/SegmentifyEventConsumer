@@ -1,16 +1,17 @@
 package segmentify.request;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import segmentify.model.ProductViewEvent;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
 @ToString
 @Builder
-public class ProductViewEventRequest {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductViewEventRequest implements Serializable {
 
     private ProductViewEvent productViewEvent;
     private String apiKey;

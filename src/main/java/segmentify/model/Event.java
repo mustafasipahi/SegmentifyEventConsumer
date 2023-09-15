@@ -1,16 +1,19 @@
 package segmentify.model;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import segmentify.constants.*;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 @Getter
 @Setter
 @ToString
-public abstract class Event {
+@JsonSubTypes({@JsonSubTypes.Type(PageViewEvent.class), @JsonSubTypes.Type(ProductViewEvent.class)})
+public abstract class Event implements Serializable {
 
     private EventNameType name;
     private String userId;

@@ -1,17 +1,18 @@
 package segmentify.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import segmentify.constants.Gender;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
 @Setter
 @ToString
-public class ProductViewEvent extends Event {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductViewEvent extends Event implements Serializable {
 
     private String productId;
     private String title;
