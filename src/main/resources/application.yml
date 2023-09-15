@@ -6,10 +6,6 @@ kafka:
   concurrencyCount: 3
   address: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
-spring:
-  kafka:
-    consumer:
-      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
 
 redis:
   host: ${REDIS_HOST:localhost}

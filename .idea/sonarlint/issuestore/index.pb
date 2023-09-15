@@ -1,8 +1,6 @@
 
 v
 Fsrc/main/java/segmentify/configuration/properties/KafkaProperties.java,1/e/1e119b7526fb4e1f59427009ae95afd2e1ea1420
-t
-Dsrc/main/java/segmentify/configuration/async/AsyncConfiguration.java,8/e/8eb8db30e11e3a7d515a27a6e087cbae8d0f5ce5
 w
 Gsrc/main/java/segmentify/configuration/async/AsyncExceptionHandler.java,f/b/fba44d14157d42882db6744a3f065d43490966a2
 {
@@ -20,7 +18,5 @@ Y
 )src/main/java/segmentify/Application.java,d/1/d1aaf171908ddd866b879eeab20945c7622653bb
 Z
 *src/main/java/segmentify/dto/EventDto.java,3/e/3e5a37b8cde77321a4eff6b33bf7ee5902acb098
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 |
 Lsrc/main/java/segmentify/configuration/kafka/KafkaConsumerConfiguration.java,2/e/2e430489e45ce77c7cbb743804286c905b85d979
